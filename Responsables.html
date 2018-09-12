@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>CRUD EVENTOS</title>
+    <link rel="stylesheet" href="style.css">
+    <!--Agrega CSS Bootstrap-->
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/misEstilos.css">
+    <link rel="stylesheet" href="css/bootstrap3navbar.css">
+
+    <!--Agrega JQuery y JS-->
+    <script src="js/bootstrap.js"></script>
+    <script src="js/misJs.js"></script>
+    <style>
+        input[type='submit'],
+        button,
+        [aria-label] {
+            cursor: pointer;
+        }
+
+        #spoiler {
+            display: none;
+        }
+    </style>
+</head>
+
+<body onload="deshabilitaRetroceso()">
+    <header>
+        <nav class="navbar navbar-expand-lg  navbar-light" style="background-color: #ffffff; ">
+            <a class="navbar-brand" href="index.html">
+                <img src="img/logo.png" width="100" height="100" alt="Responsive image" class="img-fluid">
+            </a>
+            <div class="container">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbardesplegable">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="navbar-collapse collapse" id="navbardesplegable">
+                    <ul class="navbar-nav nav-fill w-100">
+                        <li class="nav-item">
+                            <a class="nav-link" href="lista2.html">LISTA DE EVENTOS</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="quienessomos2.html">QUIENES SOMOS</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="eventos.html"> GESTIÓN DE EVENTOS</a>
+                        </li>
+                        
+                        <li class="active nav-item">
+                            <a class="nav-link" href="RESPONSABLES.html"> GESTIÓN DE RESPONSABLES</a>
+                        </li>
+                        
+                        <li class="nav-item">
+                            <a class="nav-link" href="Reservas.html"> GESTIÓN DE RESERVAS</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html"> LOGOUT</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <center>
+        <main role="main">
+            <div class="jumbotron jumbotron-fluid">
+                <form action="javascript:void(0);" method="POST" onsubmit="app.adicionar()">
+                    <input type="text" id="nombre" placeholder="nombre Responsable">
+                    <input type="text" id="area" placeholder="Area del Responsable">
+                    <input type="text" id="telefono" placeholder="Telefono">
+                    <input type="submit" value="Adicionar">
+                </form>
+
+                <div id="spoiler" role="aria-hidden">
+                    <form action="javascript:void(0);" method="POST" id="guardarEdicion">
+                        <input type="text" id="editarNombre">
+                        <input type="text" id="editarArea">
+                        <input type="text" id="editarTelefono">
+                        <input type="submit" value="Edit" /> <a onclick="cerrarEdicion()" aria-label="Close">&#10006;</a>
+                    </form>
+                </div>
+
+                <p id="contador"></p>
+                
+                <table class="table">
+                    <tbody id="tablaResponsables">
+                    </tbody>
+                </table>
+            </div>
+        </main>
+    </center>
+
+    <footer class="container" id="container-footer">
+        <div class="row" style="text-align: center; ">
+            <div class="col-6 col-md " id="col_items">
+                <h5 class="titulos_footer">Integrantes</h5>
+                <ul class="list-unstyled text-small">
+                    <li><a id="items-footer">Luis Felipe Garcia Herrera</a></li>
+                    <li><a id="items-footer">Sebastián Stiven Ramírez David</a></li>
+                    <li><a id="items-footer">Jose Miguel Mejia Chaverra</a></li>
+                </ul>
+            </div>
+            <div class="col-6 col-md" id="col_items">
+                <h5 class="titulos_footer">Log </h5>
+                <ul class="list-unstyled text-small">
+                    <li><a id="items-footer" href="index.html">Salir</a></li>
+                </ul>
+            </div>
+
+        </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/CrudResponsables.js"></script>
+    <script src = "js/funtions.js"></script>
+
+</body>
+
+</html>
